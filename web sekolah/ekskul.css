@@ -1,0 +1,230 @@
+body {
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url('01/backgroundd.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: #071d48;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+.logo {
+    height: 50px;
+    width: 80px;
+}
+.school-name {
+    margin-left: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.nav-links a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: white;
+}
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(2, 32, 99, 0.5);
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    overflow: hidden;
+}
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px 20px;
+    gap: 20px; /* Menambahkan jarak antar box */
+    scrollbar-width: none; /* Menghilangkan scroll bar di Firefox */
+    -ms-overflow-style: none; /* Menghilangkan scroll bar di IE/Edge */
+}
+
+.carousel::-webkit-scrollbar {
+    display: none; /* Menghilangkan scroll bar di Chrome/Safari */
+}
+
+.carousel-item {
+    flex: none;
+    width: 100%;
+    max-width: 33%;
+    background-color: #071d48;
+    border-radius: 30px;
+    padding: 20px;
+}
+
+.carousel-item:hover {
+    transform: translateY(-5px);
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.carousel-item p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 123, 255, 0.7);
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+}
+.left {
+    left: 10px;
+}
+.right {
+    right: 10px;
+}
+
+.carousel-btn i {
+    color: white;
+    font-size: 1.2rem;
+}
+
+.indicator {
+    display: flex;
+    margin-top: 15px;
+}
+.indicator span {
+    height: 8px;
+    width: 8px;
+    background: white;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.indicator span.active {
+    background: white;
+    transform: scale(1.2);
+}
+
+@media screen and (max-width: 1200px) {
+    .carousel-item {
+        flex: 0 0 calc(50% - 10px);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem 0;
+    }
+
+    .logo-container {
+        margin-bottom: 1rem;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .nav-links a {
+        margin: 5px;
+    }
+
+    .carousel-container {
+        padding: 0 10px;
+    }
+
+    .carousel-item {
+        flex: 0 0 calc(100% - 10px);
+    }
+
+    .carousel-item img {
+        height: 200px;
+    }
+
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
+    }
+
+    .left {
+        left: 15px;
+    }
+
+    .right {
+        right: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .school-name {
+        font-size: 1rem;
+    }
+
+    .carousel-item {
+        padding: 15px;
+    }
+
+    .carousel-item img {
+        height: 180px;
+    }
+
+    .carousel-item p {
+        font-size: 1rem;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) {
+    .carousel {
+        touch-action: pan-x;
+    }
+    
+    .carousel-item:hover {
+        transform: none;
+    }
+}
+
+/* Smooth scrolling for modern browsers */
+@supports (scroll-behavior: smooth) {
+    .carousel {
+        scroll-behavior: smooth;
+    }
+}

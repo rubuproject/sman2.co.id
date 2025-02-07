@@ -1,0 +1,124 @@
+<html>
+<head>
+    <title>Informasi Kontak - SMA Negeri 2 Merauke</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sauce+One:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .fade-in {
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        body {
+            font-family: 'Open Sauce One', sans-serif; /* Ganti font menjadi Open Sauce One */
+            background-image: url(2.png); /* Ganti dengan URL gambar latar belakang Anda */
+            background-size: cover;
+            background-position: center;
+            color: #e2e2e2c4; /* Pastikan teks tetap terlihat di atas gambar */
+        }
+        .navbar {
+            background-color: #071D48; /* Warna navbar yang baru */
+        }
+        .icon-color {
+            color: #071D48; /* Warna ikon yang sama dengan warna navbar */
+        }
+        .section-bg {
+            background: linear-gradient(to right, #05122E, #3765a1e9, #05122E); /* Gradien latar belakang bagian kartu dengan biru lebih terang 20% di tengah dan lebih gelap di sisi */
+            background-size: 200% 200%;
+            animation: gradientMove 10s ease infinite;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <header class="navbar p-4 flex justify-between items-center">
+        <div class="flex items-center">
+            <img src="info kontak/hqdefault-removebg-preview.png" alt="Logo SMA Negeri 2 Merauke" class="h-10 w-10 mr-2" width="40" height="40">
+            <span class="text-white text-lg font-bold">SMA Negeri 2 Merauke</span>
+        </div>
+        <nav class="space-x-4">
+           <a class="nav-link text-white hover:underline" href="index.html">Beranda</a>
+            <a href="#" class="text-white hover:underline">Tentang</a>
+            <a href="#" class="text-white hover:underline">Pendaftaran</a>
+            <a href="#" class="text-white hover:underline">Kontak</a>
+        </nav>
+    </header>
+
+    <!-- Informasi Kontak -->
+    <main class="p-4 flex-grow fade-in mt-20"> <!-- Tambahkan margin top untuk menurunkan informasi kontak -->
+        <div class="bg-white bg-opacity-80 shadow-xl rounded-lg p-8 md:p-12"> <!-- Warna latar belakang kartu -->
+            <h2 class="text-4xl font-bold mb-8 text-center text-gray-800">Informasi Kontak</h2> <!-- Warna judul kartu -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="flex flex-col items-start space-y-8">
+                    <div class="flex items-center">
+                        <i class="fas fa-phone-alt icon-color text-3xl mr-4"></i> <!-- Warna ikon -->
+                        <span class="text-lg text-gray-700">0812-4857-5418</span> <!-- Warna teks -->
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-envelope icon-color text-3xl mr-4"></i> <!-- Warna ikon -->
+                        <span class="text-lg text-gray-700">smanegeri2mrk@gmail.com</span> <!-- Warna teks -->
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-map-marker-alt icon-color text-3xl mr-4"></i> <!-- Warna ikon -->
+                        <span class="text-lg text-gray-700">Jl. Noari No.97, Karang Indah, Kec. Merauke, Kabupaten Merauke, Papua 99614</span> <!-- Warna teks -->
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-globe icon-color text-3xl mr-4"></i> <!-- Warna ikon -->
+                        <span class="text-lg text-gray-700">www.sman2merauke.sch.id</span> <!-- Warna teks -->
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fab fa-whatsapp icon-color text-3xl mr-4"></i> <!-- Warna ikon -->
+                        <span class="text-lg text-gray-700">infosmanda</span> <!-- Warna teks -->
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fab fa-facebook icon-color text-3xl mr-4"></i> <!-- Warna ikon -->
+                        <span class="text-lg text-gray-700">SMAN 2 Merauke</span> <!-- Warna teks -->
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fab fa-instagram icon-color text-3xl mr-4"></i> <!-- Warna ikon -->
+                        <span class="text-lg text-gray-700">@smandamerauke.official</span> <!-- Warna teks -->
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fab fa-youtube icon-color text-3xl mr-4"></i> <!-- Warna ikon -->
+                        <span class="text-lg text-gray-700">SMANDA Merauke</span> <!-- Warna teks -->
+                    </div>
+                </div>
+                <div class="flex flex-col items-start justify-center space-y-8">
+                    <div class="section-bg p-6 md:p-8 rounded-lg shadow-lg text-white w-full"> <!-- Gradien latar belakang bagian kartu -->
+                        <h3 class="text-2xl font-bold mb-2">Jam Sekolah</h3> <!-- Warna judul bagian -->
+                        <p class="text-lg">Sen - Jum: 7:00 AM - 3:00 PM</p> <!-- Warna teks bagian -->
+                    </div>
+                    <div class="section-bg p-6 md:p-8 rounded-lg shadow-lg text-white w-full"> <!-- Gradien latar belakang bagian kartu -->
+                        <h3 class="text-2xl font-bold mb-2">Kunjungi Kami</h3> <!-- Warna judul bagian -->
+                        <p class="text-lg">Jl. Noari No.97, Karang Indah, Kec. Merauke, Kabupaten Merauke, Papua 99614</p> <!-- Warna teks bagian -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="h-96"></div> <!-- Ruang kosong di bagian bawah untuk menyesuaikan tinggi gambar -->
+</body>
+</html>

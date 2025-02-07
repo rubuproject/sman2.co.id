@@ -1,0 +1,152 @@
+<html>
+ <head>
+  <title>
+   Ekstrakurikuler Drumband
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   .navbar {
+    background-color: #071D48;
+   }
+   .carousel {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+   }
+   .carousel img {
+    min-width: 100%;
+    transition: transform 1s ease-in-out;
+   }
+   .fade-in {
+    animation: fadeIn 2s ease-in-out;
+   }
+   @keyframes fadeIn {
+    from {
+     opacity: 0;
+    }
+    to {
+     opacity: 1;
+    }
+   }
+   .slide-in {
+    animation: slideIn 1.5s ease-in-out;
+   }
+   @keyframes slideIn {
+    from {
+     transform: translateX(-100%);
+    }
+    to {
+     transform: translateX(0);
+    }
+   }
+   .background-image {
+    background-image: url('2.png');
+    background-size: cover;
+    background-position: center;
+   }
+  </style>
+ </head>
+ <body class="text-white font-sans min-h-screen background-image">
+  <header class="navbar p-4 flex justify-between items-center">
+   <div class="flex items-center">
+    <img alt="Logo SMA Negeri 2 Merauke" class="h-10 w-10 mr-2" height="40" src="hqdefault-removebg-preview.png" width="40"/>
+    <span class="text-white text-lg font-bold">
+     SMA Negeri 2 Merauke
+    </span>
+   </div>
+   <nav class="hidden md:flex space-x-4">
+    <a class="text-white hover:underline" href="ekstrakulikuler.html">
+    Ekstrakurikuler
+    </a>
+    <a class="text-white hover:underline" href="index.html">
+     Profil
+    </a>
+    <a class="text-white hover:underline" href="#">
+     Organisasi
+    </a>
+    <a class="text-white hover:underline" href="#">
+     Akademik
+    </a>
+    <a class="text-white hover:underline" href="#">
+     Kontak
+    </a>
+   </nav>
+   <div class="md:hidden">
+    <button id="menu-button" class="text-white focus:outline-none">
+     <i class="fas fa-bars"></i>
+    </button>
+   </div>
+  </header>
+  <div id="mobile-menu" class="hidden md:hidden bg-blue-900 p-4">
+   <a class="block text-white hover:underline mb-2" href="ekstrakulikuler.html">
+    Ekstrakurikuler
+   </a>
+   <a class="block text-white hover:underline mb-2" href="index.html">
+    Profil
+   </a>
+   <a class="block text-white hover:underline mb-2" href="#">
+    Organisasi
+   </a>
+   <a class="block text-white hover:underline mb-2" href="#">
+    Akademik
+   </a>
+   <a class="block text-white hover:underline" href="#">
+    Kontak
+   </a>
+  </div>
+  <main class="p-4 min-h-screen fade-in">
+   <div class="carousel slide-in">
+    <!-- Foto 3: Tim Basket -->
+    <img alt="Basketball Team Group Photo 1" src="01/IMG-20250117-WA0005.jpg"/>
+    <!-- Foto 2: Tim Basket -->
+    <img alt="Basketball Team Group Photo 2" src="01/IMG-20250117-WA0003.jpg"/>
+    <!-- Foto 3: Tim Basket -->
+    <img alt="Basketball Team Group Photo 3" src="01/IMG-20250114-WA0031.jpg"/>
+   </div>
+</div>
+<div class="mt-4 text-center slide-in">
+ <h1 class="text-2xl font-bold">
+  Hallo sobat SMANDA! Selamat datang di Ekstrakurikuler Drumband!
+ </h1>
+</div>
+<div class="mt-4 text-lg slide-in">
+ <p>
+  Drumband adalah tempat bagi kalian yang ingin menyalurkan semangat dan kreativitas melalui alunan musik yang penuh energi. Di sini, kita tidak hanya belajar memainkan berbagai instrumen seperti tenor, snar, dan blira, tetapi juga melatih kekompakan, kedisiplinan, serta koordinasi tim yang solid.
+ </p>
+ <p class="mt-4">
+  Bergabung dengan Drumband berarti kalian akan merasakan pengalaman luar biasa, mulai dari tampil di parade, upacara, hingga berbagai kompetisi. Suara gemuruh alat musik yang kalian mainkan akan menciptakan harmoni yang memukau dan membangkitkan semangat banyak orang.
+ </p>
+ <p class="mt-4">
+  Ekstrakurikuler ini juga mengajarkan bagaimana menjadi pribadi yang percaya diri, berkomitmen, dan selalu bersemangat. Mari bergabung bersama Drumband, karena setiap langkah dan irama yang kalian ciptakan adalah bagian dari kisah yang menginspirasi!
+ </p>
+</div>c:\Users\Rangga\Downloads\IMG-20250114-WA0031.jpg
+  </main>
+  <footer class="p-4 h-64">
+  </footer>
+  <script>
+   let currentIndex = 0;
+   const images = document.querySelectorAll('.carousel img');
+   const totalImages = images.length;
+
+   function showNextImage() {
+    images.forEach((img, index) => {
+     img.style.transform = `translateX(-${100 * currentIndex}%)`;
+    });
+    currentIndex = (currentIndex + 1) % totalImages;
+   }
+
+   setInterval(showNextImage, 3000);
+
+   const menuButton = document.getElementById('menu-button');
+   const mobileMenu = document.getElementById('mobile-menu');
+
+   menuButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+   });
+  </script>
+ </body>
+</html>

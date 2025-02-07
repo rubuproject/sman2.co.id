@@ -1,0 +1,150 @@
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-image: url('backgroundd.png'); /* Ganti 'nama-file-gambar.jpg' dengan path gambar kamu */
+    background-size: cover; /* Membuat gambar memenuhi seluruh layar */
+    background-position: center; /* Menempatkan gambar di tengah */
+    background-repeat: no-repeat; /* Mencegah pengulangan gambar */
+    color: white;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #071d48;
+}
+
+.navbar img {
+    height: 50px;
+}
+
+.navbar span {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    font-family: 'Roboto', sans-serif; /* Atau font lain sesuai kebutuhan */
+    position: relative; /* Aktifkan kontrol posisi */
+    top: -18px; /* Geser teks ke atas */
+}
+
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 18px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    gap: 20px;
+}
+
+.card {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 40px;
+    padding: 0;
+    width: 45%; /* Menjaga lebar tetap 30% */
+    height: 650px; /* Memperbesar tinggi card */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    position: relative;
+    margin: 25px;
+}
+
+.card img {
+    width: 100%; /* Membuat gambar menyesuaikan lebar card */
+    height: 250px; /* Mengatur tinggi gambar */
+    object-fit: cover; /* Agar gambar tidak terdistorsi */
+    border-radius: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.card-content {
+    padding: 20px;
+    z-index: 2;
+    position: relative;
+    margin-top: 180px; /* Menyesuaikan agar konten berada di bawah gambar */
+}
+
+.card h3 {
+    margin: 20px 0 10px;
+    margin-top: 80px; /* Menggeser teks sedikit ke bawah */
+    font-family: Arial, sans-serif; /* Menggunakan font Arial */
+}
+
+.card p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-top: 50px; /* Menggeser teks sedikit ke bawah */
+    font-family: Arial, sans-serif; /* Menggunakan font Arial */
+}
+
+.card button {
+    background: none;
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 5px 10px;
+    color: white;
+    cursor: pointer;
+    margin-top: 85px;
+    position: absolute;
+    left: 10px; /* Menempatkan tombol di sisi kiri */
+}
+
+.info {
+    font-size: 50px;
+    font-weight: bold;
+    text-align: left;
+    width: 50%;
+}
+
+.button-large {
+    display: block;
+    margin: 20px auto;
+    background-color: #e2e2e2;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    padding: 20px 40px;
+    font-size: 18px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 10px; /* Atur jarak dari bawah card */
+    left: 36%; /* Agar tombol tetap di tengah */
+    transform: translateX(-50%); /* Menjaga agar tombol tetap center */
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+    .info {
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+    }
+}

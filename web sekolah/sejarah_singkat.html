@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SMA Negeri 2 Merauke</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #e2e2e2;
+      --bg: #0a192f;
+      --secondary: #112240;
+      --text: #8892b0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      font-family: 'Arial';
+      font-size: 16px;
+      font-weight: 400;
+      color: #e2e2e2;
+      background-image: url(2.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
+      margin: 0;
+      padding: 0;
+    }
+
+    .kepala {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 15px 5%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: #071d48;
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .kepala img {
+      width: 40px;
+      height: 40px;
+      border-radius: 6px;
+      margin-right: 10px;
+    }
+
+    .kepala h1 {
+      font-size: 1.2rem;
+      color: #e2e2e2;
+      font-weight: 500;
+      margin: 0;
+    }
+
+    .separator {
+      color: #e2e2e2;
+      margin: 0 10px;
+    }
+
+    .navigasi {
+      margin-left: auto;
+      display: flex;
+      gap: 25px;
+    }
+
+    .navigasi a {
+      text-decoration: none;
+      color: #e2e2e2;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+    }
+
+    .navigasi a:hover {
+      color: #64ffda;
+    }
+
+    .konten-utama {
+      width: 90%;
+      margin: 100px auto 0;
+      padding: 20px;
+    }
+
+    .main-title {
+      min-height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 0.5rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+      opacity: 0;
+      transform: translateY(50px);
+      animation: titleEntrance 1s ease-out forwards;
+    }
+
+    .sub-title {
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #e2e2e2;
+      margin-top: -20vh; 
+      margin-bottom: 3rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease-out;
+    }
+
+    @keyframes titleEntrance {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .content-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      margin: 8rem 0;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s ease-out;
+    }
+
+    .content-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .content-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+      border: 2px solid #e2e2e2;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      transition: transform 0.5s ease;
+    }
+
+    .content-text {
+      padding: 2rem;
+      background: var(--secondary);
+      border-radius: 15px;
+      position: relative;
+    }
+
+    .content-text h2 {
+      color: var(--primary);
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .content-text p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .content-section:nth-child(even) .content-text {
+      order: -1;
+    }
+
+    .full-width {
+      grid-column: 1 / -1;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .content-section {
+        grid-template-columns: 1fr;
+        margin: 4rem 0;
+      }
+
+      .main-title {
+        font-size: 2em;
+      }
+
+      .sub-title {
+        font-size: 1.2rem;
+      }
+
+      .navigasi {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .navigasi a {
+        font-size: 1rem;
+      }
+    }
+
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: var(--primary);
+      z-index: 999;
+    }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--primary);
+      color: var(--bg);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+  <div class="scroll-progress" id="scroll-progress"></div>
+
+  <header class="kepala">
+    <img src="Sejarah Singkat/logo.png" alt="School logo">
+    <span class="separator">|</span>
+    <h1>SMA Negeri 2 Merauke</h1>
+    <nav class="navigasi">
+      <a class="nav link text-white hover:underline" href="index.html">Profil</a>
+      <a href="#">Organisasi</a>
+      <a href="#">Akademik</a>
+      <a href="#">Kontak</a>
+    </nav>
+  </header>
+
+  <main class="konten-utama">
+    <h1 class="main-title">SEJARAH SINGKAT</h1>
+    <div class="sub-title" data-aos="fade-up">SMA Negeri 2 Merauke</div>
+
+    <section class="content-section" data-aos="fade-up">
+      <div class="content-image">
+        <img src="Sejarah Singkat/halaman_depan_SMA.jpg" alt="Gedung Sekolah">
+      </div>
+      <div class="content-text">
+        <h2>Latar Belakang Pendirian</h2>
+        <p>SMA Negeri 2 Merauke didirikan karena masyarakat Merauke butuh fasilitas pendidikan tambahan. Dulu, hanya ada dua SMA di wilayah itu, padahal jumlah siswa terus meningkat setiap tahunnya. Kondisi ini bikin masyarakat merasa perlu adanya sekolah baru yang bisa mengakomodir peningkatan jumlah siswa serta meningkatkan mutu pendidikan. Pendirian sekolah ini merupakan respons terhadap kebutuhan yang mendesak untuk memperluas akses pendidikan di daerah yang sedang berkembang.</p>
+      </div>
+ </section>
+
+    <section class="content-section" data-aos="fade-up">
+      <div class="content-image">
+        <img src="Sejarah Singkat/SMA2_lama.jpg" alt="Proses Pembangunan">
+      </div>
+      <div class="content-text">
+        <h2>Awal Pembangunan</h2>
+        <p>Proses pembangunan SMA Negeri 2 Merauke dimulai dengan peletakan batu pertama pada tanggal 1 April 1991. Momen ini dianggap sebagai titik awal berdirinya sekolah tersebut dan diperingati sebagai hari penting dalam sejarah pendidikan Merauke. Seluruh proses pembangunan dirancang dengan mempertimbangkan kebutuhan masyarakat, sehingga sekolah ini dibangun dengan fasilitas yang memadai dan sesuai dengan standar pendidikan yang diharapkan. Proses pembangunan yang telaten ini menunjukkan komitmen pemerintah dan masyarakat dalam menyediakan pendidikan berkualitas.</p>
+      </div>
+    </section>
+
+    <section class="content-section" data-aos="fade-up">
+      <div class="content-text full-width">
+        <h2>Seleksi Siswa dan Harapan Pendidikan</h2>
+        <p>Untuk angkatan pertamanya, siswa yang diterima diambil dari mereka yang berdomisili di Noari dan sekitarnya. Hal ini dilakukan supaya akses pendidikan menjadi lebih mudah dan tidak memerlukan perjalanan jauh bagi para siswa. Selain itu, kehadiran SMA Negeri 2 Merauke membuka peluang bagi peningkatan kualitas pendidikan di wilayah tersebut, karena dengan adanya sekolah baru, diharapkan proses belajar mengajar bisa berlangsung lebih optimal. Masyarakat pun melihat kehadiran sekolah ini sebagai harapan baru untuk masa depan pendidikan yang lebih cerah di Merauke.</p>
+      </div>
+    </section>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="fas fa-arrow-up"></i>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+
+    AOS.init({
+      offset: 120,
+      duration: 800,
+      once: false,
+      mirror: true,
+      anchorPlacement: 'top-bottom'
+    });
+
+    window.addEventListener('scroll', () => {
+      const scrollProgress = document.getElementById('scroll-progress');
+      const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+      scrollProgress.style.width = scrolled + '%';
+    });
+
+    const backToTop = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) {
+        backToTop.style.opacity = '1';
+      } else {
+        backToTop.style.opacity = '0';
+      }
+    });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        } else {
+          entry.target.classList.remove('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.content-section, .sub-title').forEach((section) => {
+      observer.observe(section);
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+      // Hitung posisi scroll
+      const mainTitle = document.querySelector('.main-title');
+      const windowHeight = window.innerHeight;
+      const elementHeight = mainTitle.offsetHeight;
+      const targetScroll = mainTitle.offsetTop - (windowHeight/2) + (elementHeight/2);
+      
+      window.scrollTo({
+          top: targetScroll,
+          behavior: 'auto'
+      });
+      
+      const header = document.querySelector('.kepala');
+      header.style.transition = 'none';
+      setTimeout(() => {
+          header.style.transition = '';
+      }, 1000);
+    });
+  </script>
+</body>
+</html>
